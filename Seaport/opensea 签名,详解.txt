@@ -1,0 +1,251 @@
+卖家行为:
+	商品签名 售卖(固定拍, 可以捆绑销售)  -> 买家直接购买
+	商品签名 售卖(定时拍, 不能捆绑) -> 买家出价签名 ->  卖家 accept 发起交易
+
+买家行为:
+	make offer(买家针对单个nft 出价) 
+	make offer(买家针对nft 集群出价, 可以设置购买量) 
+
+
+itemType:
+	0: NATIVE, // unused
+    1: ERC20,
+    2: ERC721,
+    3: ERC1155
+    // 4: ERC721 items where a number of tokenIds are supported
+    ERC721_WITH_CRITERIA,
+
+    // 5: ERC1155 items where a number of ids are supported
+    ERC1155_WITH_CRITERIA
+
+
+(不懂)    
+OrderType:
+	// 0: no partial fills, anyone can execute
+    FULL_OPEN,
+
+    // 1: partial fills supported, anyone can execute
+    PARTIAL_OPEN,
+
+    // 2: no partial fills, only offerer or zone can execute
+    FULL_RESTRICTED,
+
+    // 3: partial fills supported, only offerer or zone can execute
+    PARTIAL_RESTRICTED
+
+
+
+
+
+
+
+
+
+出价签名(单个) :
+offerer: 0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17 (买家地址)
+offer:
+	0:
+		itemType: 1  (ERC20)
+		token: 0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd (WBNB 合约)
+ 		identifierOrCriteria: 0 
+		startAmount: 11000000000000000
+		endAmount: 11000000000000000
+
+consideration:
+	0:
+		itemType: 2 (ERC721)
+		token: 0x866DF3e1b203cC3bf50eB4f707d29CE5b665d4D1
+		identifierOrCriteria: 2009429 (nft tokenID)
+		startAmount: 1
+		endAmount:1
+		recipient:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17 (接受者)
+	1:
+		itemType:1 (ERC20)
+		token:0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd
+		identifierOrCriteria:0
+
+startAmount:275000000000000
+endAmount:275000000000000
+recipient:0x0000a26b00c1F0DF003000390027140000fAa719
+startTime:1670587033
+endTime:1670846224
+orderType:0
+zone:0x0000000000000000000000000000000000000000
+zoneHash:0x0000000000000000000000000000000000000000000000000000000000000000
+salt:24446860302761739304752683030156737591518664810215442929808897778638419911338
+conduitKey:0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000
+counter:0
+
+
+
+
+
+
+
+
+
+
+出价签名(collection, 购买数量:3) :
+
+offerer:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17 (买家)
+offer:
+	0:
+		itemType:1
+		token:0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd (WBNB)
+		identifierOrCriteria:0
+		startAmount:30000000000000000 (购买数量3的金额, 和购买数有关)
+		endAmount:30000000000000000
+consideration:
+	0:
+		itemType:4  (erc721 nft collection, 购买这个collection 的nft)
+		token:0x866DF3e1b203cC3bf50eB4f707d29CE5b665d4D1
+		identifierOrCriteria:64323352013965078566227522966222516410154319261255111949420789586861337929411
+		startAmount:3  (购买数量3, 和购买数有关)
+		endAmount:3
+		recipient:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17
+	1:
+		itemType:1
+		token:0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd (WBNB)
+		identifierOrCriteria:0 
+		startAmount:750000000000000
+		endAmount:750000000000000
+		recipient:0x0000a26b00c1F0DF003000390027140000fAa719 (PayableProxy???)
+startTime:1670587558 
+endTime:1670846743
+orderType:1 
+zone:0x0000000000000000000000000000000000000000
+zoneHash:0x0000000000000000000000000000000000000000000000000000000000000000
+salt:24446860302761739304752683030156737591518664810215442929811365941052882378936
+conduitKey:0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000
+counter:0
+
+
+
+
+
+
+
+
+
+
+
+
+
+卖家 出价(固定拍, 不绑定其他nft)
+offerer:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17
+offer:
+	0:
+		itemType:2 (erc721)
+		token:0xD6bCdb6b063F7E27F75C2E6b911fE81A502684a1 (nft 合约)
+		identifierOrCriteria:0 (tokenId)
+		startAmount:1
+		endAmount:1
+consideration:
+	0:
+		itemType:0 (原生token)
+		token:0x0000000000000000000000000000000000000000
+		identifierOrCriteria:0
+		startAmount:9750000000000000 (似乎是给nft所有者的money)
+		endAmount:9750000000000000
+		recipient:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17 (nft出售金额接收者)
+	1:
+		itemType:0
+		token:0x0000000000000000000000000000000000000000
+		identifierOrCriteria:0
+		startAmount:250000000000000 (似乎是给Service Fee的money)
+		endAmount:250000000000000
+		recipient:0x0000a26b00c1F0DF003000390027140000fAa719 (Service Fee 的接收者)
+startTime:1670588724
+endTime:1673267124
+orderType:0
+zone:0x0000000000000000000000000000000000000000
+zoneHash:0x0000000000000000000000000000000000000000000000000000000000000000
+salt:24446860302761739304752683030156737591518664810215442929800758306154348963858
+conduitKey:0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000
+counter:0
+	
+
+
+
+
+
+
+
+
+卖家 出价(固定拍, 绑定其他nft)
+offerer:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17
+offer:
+	0:
+		itemType:2
+		token:0xD6bCdb6b063F7E27F75C2E6b911fE81A502684a1
+		identifierOrCriteria:3
+		startAmount:1
+		endAmount:1
+	1:
+		itemType:2
+		token:0xD6bCdb6b063F7E27F75C2E6b911fE81A502684a1
+		identifierOrCriteria:0
+		startAmount:1
+		endAmount:1
+consideration:
+	0:
+		itemType:0
+		token:0x0000000000000000000000000000000000000000
+		identifierOrCriteria:0
+		startAmount:1950000000000000
+		endAmount:1950000000000000
+		recipient:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17
+	1:
+		itemType:0
+		token:0x0000000000000000000000000000000000000000
+		identifierOrCriteria:0
+		startAmount:50000000000000
+		endAmount:50000000000000
+		recipient:0x0000a26b00c1F0DF003000390027140000fAa719
+startTime:1670589208
+endTime:1673267608
+orderType:0
+zone:0x0000000000000000000000000000000000000000
+zoneHash:0x0000000000000000000000000000000000000000000000000000000000000000
+salt:24446860302761739304752683030156737591518664810215442929816243198908130942015
+conduitKey:0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000
+counter:0
+
+
+
+
+
+
+
+
+
+
+卖家 出价(定时拍, 绑定其他nft)
+offerer:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17
+offer:
+	0:
+		itemType:2
+		token:0xD6bCdb6b063F7E27F75C2E6b911fE81A502684a1
+		identifierOrCriteria:3
+		startAmount:1
+		endAmount:1
+consideration:
+	0:
+		itemType:1
+		token:0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6
+		identifierOrCriteria:0
+		startAmount:975000000000000
+		endAmount:975000000000000
+		recipient:0x5fd8b97F8D8DA84813F583C42d40D1e5A4DA9A17
+startTime:1670589780
+endTime:1671799380
+orderType:2
+zone:0x9B814233894Cd227f561B78Cc65891AA55C62Ad2
+zoneHash:0x0000000000000000000000000000000000000000000000000000000000000000
+salt:24446860302761739304752683030156737591518664810215442929814229213964479858910
+conduitKey:0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000
+counter:0
+
+
+
+

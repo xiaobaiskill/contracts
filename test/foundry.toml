@@ -1,0 +1,9 @@
+[profile.default]
+src = 'src'
+out = 'out'
+optimizer = true
+optimizer_runs = 10000
+solc_version = "0.8.16"
+libs = ['lib']
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config

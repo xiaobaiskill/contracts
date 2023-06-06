@@ -1,0 +1,215 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					}
+				],
+				"name": "bridgeMint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/NFTBridge.sol": "INFT"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/Pausable.sol": {
+			"keccak256": "0xe68ed7fb8766ed1e888291f881e36b616037f852b37d96877045319ad298ba87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1d491a2ca79dbf44bc02e876e21a5847a2cbcc011188532ad8662cdc1c134a4e",
+				"dweb:/ipfs/QmUQXhSV8ZvHLzfdG89ZNSh1nLrAYyjnNBLznJGwGcwVk8"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"contracts/NFTBridge.sol": {
+			"keccak256": "0x2fbd0cd8c0b7f29e21b143999fa3d3a991702e83b2d8e82874c81e2287a57d02",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://3f9c34f878486f599918acaed266c5400fd4fa4208ad28e946991c6330c447f8",
+				"dweb:/ipfs/QmTb2hLKLCRwFCtPixvDkYiexePuFDUCzPMJmmP4QM1ETS"
+			]
+		},
+		"contracts/framework/MessageBusAddress.sol": {
+			"keccak256": "0x3d226bc999ab346065c3a9f1921ca4d82b4d17a806219221e6c7e0f3ffe25877",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://bc5fc3319ca81a6e39549f4090301b8495b9dcbab11637a2d953e488b5cb7019",
+				"dweb:/ipfs/QmcGhy4zwLJYEzM86Xg19PstYQw5KSRnk1rUTKPFnxCGBs"
+			]
+		},
+		"contracts/framework/MessageReceiverApp.sol": {
+			"keccak256": "0x83a77daf048cf19fa0a2c45eb577afb6d6363367fe012869201833e34a2b4e96",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://a890e8aa72fdcc70390d406c369a9bec1720c5268162967afcae26872e82b067",
+				"dweb:/ipfs/QmctG9AEJ2xjKyWiq45wjrYQiz9YKv9EqQRT7YKLtkwkkY"
+			]
+		},
+		"contracts/interfaces/IMessageBus.sol": {
+			"keccak256": "0x2c76466764c1f3785a7f910ea6904f854050444ebf2968c5cb58d1efdff42cfb",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://8bad5e60081f8c82fd07dc8ed03ab3648b18fe407ebd9bb161e545d020264773",
+				"dweb:/ipfs/QmWCxrtq2Yjs2QnxX1wB71tAhnAJo5tLkvft1nfTGf4CpJ"
+			]
+		},
+		"contracts/interfaces/IMessageReceiverApp.sol": {
+			"keccak256": "0x9e4d6ec7303c40c1a8c897655c3d6ef6ae1f9fa7e8c806e7c6878ff01b51e67b",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://32eac7148c355dd61669356b1d3f8cd2218ce80a1c6006c57daae729f0593bfb",
+				"dweb:/ipfs/QmVp3XLxhfpJJ8pmN1qv1V5itoZuEHS7qqX98Jfo3nRGD6"
+			]
+		},
+		"contracts/libraries/MsgDataTypes.sol": {
+			"keccak256": "0x654e8eb09155ff4f67495f4b2417331aa67706b50942be8439062bec93d673e5",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://86ad13f0e651830b8cc01c5b787e5401f4e1942098d27762e96f3f8fea7835fd",
+				"dweb:/ipfs/QmTFSQWN9MTVdr9gutf1wqi7S8SCTJabrryi4PT9fWMsAM"
+			]
+		},
+		"contracts/safeguard/Ownable.sol": {
+			"keccak256": "0x2a92103195b8dce0f34fdf9bf7f94ddf38bf8edf0c0fd4be21323c47016687e9",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://9bb9e6752d4d44e1586c36bdeaff9f7c0bd9026f2b33f3f506f7bdfbccf3166f",
+				"dweb:/ipfs/QmXLwLdty7CaCMeunSR6nEg4ftQ7E2K6kHDUJawDA56s6P"
+			]
+		},
+		"contracts/safeguard/Pauser.sol": {
+			"keccak256": "0x5d6bf2c82f3467d50d9f7c653b20a47ab3bbe3e81699600fc03eb8f796d005bb",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://a31af2433f00583dd879fe2e5700fad75b772fc3a41c41e7057a8964769c4a23",
+				"dweb:/ipfs/QmRHrS9AHgrsAUpjXFjCWAH2EMtNsnyDYnbGHJrEmNeJL1"
+			]
+		}
+	},
+	"version": 1
+}
