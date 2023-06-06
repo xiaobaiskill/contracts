@@ -10,8 +10,8 @@ contract Mint is Ownable {
 
     uint256 public _currentAmount;
 
-    uint128 public _totalCount;
-    uint128 public _rate;
+    uint256 public _totalCount;
+    uint256 public immutable _rate;
 
     struct Person {
         // 1 + 5 + 5 + 4 = 15
@@ -32,7 +32,7 @@ contract Mint is Ownable {
     mapping(address => Invite[]) public _invites;
     mapping(address => address) public _exitsCheck;
 
-    constructor(address token, uint128 rate) {
+    constructor(address token, uint256 rate) {
         _token = token; // Mint token address
         _rate = rate;
     }
